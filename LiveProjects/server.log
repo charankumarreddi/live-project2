@@ -1,0 +1,203 @@
+2025-11-04 12:06:08 [info     ] Metrics collector initialized  enabled=True
+INFO:     Started server process [47151]
+INFO:     Waiting for application startup.
+{"app_name": "Production Observability App", "version": "1.0.0", "environment": "development", "event": "Starting application", "level": "info"}
+{"event": "Tracing disabled", "level": "info"}
+2025-11-04 12:06:09,437 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,437 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("users")
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "PRAGMA main.table_info(\"users\")", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,437 INFO sqlalchemy.engine.Engine [raw sql] ()
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[raw sql] ()", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,439 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("tasks")
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "PRAGMA main.table_info(\"tasks\")", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,440 INFO sqlalchemy.engine.Engine [raw sql] ()
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[raw sql] ()", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,440 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("audit_logs")
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "PRAGMA main.table_info(\"audit_logs\")", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,440 INFO sqlalchemy.engine.Engine [raw sql] ()
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[raw sql] ()", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,440 INFO sqlalchemy.engine.Engine PRAGMA main.table_info("metric_snapshots")
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "PRAGMA main.table_info(\"metric_snapshots\")", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,440 INFO sqlalchemy.engine.Engine [raw sql] ()
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[raw sql] ()", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:09,441 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+{"database_url": "sqlite+aiosqlite:///./app.db@***", "event": "Database initialized successfully", "level": "info"}
+{"event": "Application startup completed successfully", "level": "info"}
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8888 (Press CTRL+C to quit)
+{"method": "POST", "path": "/api/v1/auth/register", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 122, "event": "Request started", "request_id": "de2fb3ef-ba16-4200-a32d-709505755697", "level": "info"}
+{"email": "demo@example.com", "username": "demouser", "event": "User registration attempt", "request_id": "de2fb3ef-ba16-4200-a32d-709505755697", "level": "info"}
+2025-11-04 12:06:20,718 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:20", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:20,722 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login 
+FROM users 
+WHERE users.email = ? OR users.username = ?
+{"asctime": "2025-11-04 12:06:20", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login \nFROM users \nWHERE users.email = ? OR users.username = ?", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:20,723 INFO sqlalchemy.engine.Engine [generated in 0.00025s] ('demo@example.com', 'demouser')
+{"asctime": "2025-11-04 12:06:20", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00025s] ('demo@example.com', 'demouser')", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,045 INFO sqlalchemy.engine.Engine INSERT INTO users (email, username, hashed_password, full_name, is_active, is_superuser, last_login) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "INSERT INTO users (email, username, hashed_password, full_name, is_active, is_superuser, last_login) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,045 INFO sqlalchemy.engine.Engine [generated in 0.00025s] ('demo@example.com', 'demouser', '$2b$12$BDvs0qMgEDR/VVussjXuZ.cmh4YVvl7fbBBC96c9tats5BL9BP6tC', 'Demo User', 1, 0, None)
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00025s] ('demo@example.com', 'demouser', '$2b$12$BDvs0qMgEDR/VVussjXuZ.cmh4YVvl7fbBBC96c9tats5BL9BP6tC', 'Demo User', 1, 0, None)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,049 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,050 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,051 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login 
+FROM users 
+WHERE users.id = ?
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login \nFROM users \nWHERE users.id = ?", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,051 INFO sqlalchemy.engine.Engine [generated in 0.00011s] (1,)
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00011s] (1,)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,053 INFO sqlalchemy.engine.Engine INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,053 INFO sqlalchemy.engine.Engine [generated in 0.00012s] (1, 'user_registration', 'user', '1', None, '127.0.0.1', 'curl/8.6.0')
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00012s] (1, 'user_registration', 'user', '1', None, '127.0.0.1', 'curl/8.6.0')", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:21,055 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:21", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+{"user_id": 1, "email": "demo@example.com", "event": "User registered successfully", "request_id": "de2fb3ef-ba16-4200-a32d-709505755697", "level": "info"}
+{"method": "POST", "path": "/api/v1/auth/register", "status_code": 201, "duration": "0.347s", "response_size": 0, "event": "Request completed", "request_id": "de2fb3ef-ba16-4200-a32d-709505755697", "level": "info"}
+INFO:     127.0.0.1:63269 - "POST /api/v1/auth/register HTTP/1.1" 201 Created
+{"method": "POST", "path": "/api/v1/auth/login", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 64, "event": "Request started", "request_id": "d32bd3a7-b404-4d22-a63e-8c0c344c029f", "level": "info"}
+{"email": "demo@example.com", "event": "Login attempt", "request_id": "d32bd3a7-b404-4d22-a63e-8c0c344c029f", "level": "info"}
+2025-11-04 12:06:38,634 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,635 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login 
+FROM users 
+WHERE users.email = ? AND users.is_active = 1
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login \nFROM users \nWHERE users.email = ? AND users.is_active = 1", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,635 INFO sqlalchemy.engine.Engine [generated in 0.00016s] ('demo@example.com',)
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00016s] ('demo@example.com',)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,927 INFO sqlalchemy.engine.Engine UPDATE users SET updated_at=CURRENT_TIMESTAMP, last_login=? WHERE users.id = ?
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "UPDATE users SET updated_at=CURRENT_TIMESTAMP, last_login=? WHERE users.id = ?", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,927 INFO sqlalchemy.engine.Engine [generated in 0.00027s] ('2025-11-04 06:36:38.926634', 1)
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00027s] ('2025-11-04 06:36:38.926634', 1)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,928 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+{"email": "demo@example.com", "user_id": 1, "event": "User authenticated successfully", "request_id": "d32bd3a7-b404-4d22-a63e-8c0c344c029f", "level": "info"}
+{"user_id": "1", "expires_at": "2025-11-04T07:06:38.929754", "event": "Access token created", "request_id": "d32bd3a7-b404-4d22-a63e-8c0c344c029f", "level": "info"}
+2025-11-04 12:06:38,944 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,944 INFO sqlalchemy.engine.Engine INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,944 INFO sqlalchemy.engine.Engine [cached since 17.89s ago] (1, 'user_login', 'user', '1', None, '127.0.0.1', 'curl/8.6.0')
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[cached since 17.89s ago] (1, 'user_login', 'user', '1', None, '127.0.0.1', 'curl/8.6.0')", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:38,945 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:38", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+{"user_id": 1, "email": "demo@example.com", "event": "User logged in successfully", "request_id": "d32bd3a7-b404-4d22-a63e-8c0c344c029f", "level": "info"}
+{"method": "POST", "path": "/api/v1/auth/login", "status_code": 200, "duration": "0.315s", "response_size": 0, "event": "Request completed", "request_id": "d32bd3a7-b404-4d22-a63e-8c0c344c029f", "level": "info"}
+INFO:     127.0.0.1:63279 - "POST /api/v1/auth/login HTTP/1.1" 200 OK
+{"method": "POST", "path": "/api/v1/tasks", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 114, "event": "Request started", "request_id": "30f2e8d5-fc4c-4e55-a53e-31e346c00a46", "level": "info"}
+2025-11-04 12:06:48,581 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,582 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login 
+FROM users 
+WHERE users.id = ? AND users.is_active = 1
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login \nFROM users \nWHERE users.id = ? AND users.is_active = 1", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,582 INFO sqlalchemy.engine.Engine [generated in 0.00022s] (1,)
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00022s] (1,)", "service": null, "version": null, "environment": null}
+{"user_id": 1, "title": "Demo Task", "event": "Task creation attempt", "request_id": "30f2e8d5-fc4c-4e55-a53e-31e346c00a46", "level": "info"}
+2025-11-04 12:06:48,586 INFO sqlalchemy.engine.Engine INSERT INTO tasks (title, description, status, priority, user_id, completed_at) VALUES (?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "INSERT INTO tasks (title, description, status, priority, user_id, completed_at) VALUES (?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,586 INFO sqlalchemy.engine.Engine [generated in 0.00021s] ('Demo Task', 'This is a demo task for the interview', 'pending', 'high', 1, None)
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00021s] ('Demo Task', 'This is a demo task for the interview', 'pending', 'high', 1, None)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,587 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,588 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,589 INFO sqlalchemy.engine.Engine SELECT tasks.id, tasks.title, tasks.description, tasks.status, tasks.priority, tasks.user_id, tasks.created_at, tasks.updated_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT tasks.id, tasks.title, tasks.description, tasks.status, tasks.priority, tasks.user_id, tasks.created_at, tasks.updated_at, tasks.completed_at \nFROM tasks \nWHERE tasks.id = ?", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,589 INFO sqlalchemy.engine.Engine [generated in 0.00012s] (1,)
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00012s] (1,)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,590 INFO sqlalchemy.engine.Engine INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,590 INFO sqlalchemy.engine.Engine [cached since 27.54s ago] (1, 'task_created', 'task', '1', 'Title: Demo Task, Priority: high', None, None)
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[cached since 27.54s ago] (1, 'task_created', 'task', '1', 'Title: Demo Task, Priority: high', None, None)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:48,591 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:48", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+{"task_id": 1, "user_id": 1, "event": "Task created successfully", "request_id": "30f2e8d5-fc4c-4e55-a53e-31e346c00a46", "level": "info"}
+{"method": "POST", "path": "/api/v1/tasks", "status_code": 201, "duration": "0.012s", "response_size": 0, "event": "Request completed", "request_id": "30f2e8d5-fc4c-4e55-a53e-31e346c00a46", "level": "info"}
+INFO:     127.0.0.1:63284 - "POST /api/v1/tasks HTTP/1.1" 201 Created
+{"method": "POST", "path": "/api/v1/tasks", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 114, "event": "Request started", "request_id": "e89726ad-c4b0-4c9d-a170-af1fcf3b27ec", "level": "info"}
+2025-11-04 12:06:55,781 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,782 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login 
+FROM users 
+WHERE users.id = ? AND users.is_active = 1
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login \nFROM users \nWHERE users.id = ? AND users.is_active = 1", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,782 INFO sqlalchemy.engine.Engine [cached since 7.2s ago] (1,)
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[cached since 7.2s ago] (1,)", "service": null, "version": null, "environment": null}
+{"user_id": 1, "title": "Demo Task", "event": "Task creation attempt", "request_id": "e89726ad-c4b0-4c9d-a170-af1fcf3b27ec", "level": "info"}
+2025-11-04 12:06:55,783 INFO sqlalchemy.engine.Engine INSERT INTO tasks (title, description, status, priority, user_id, completed_at) VALUES (?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "INSERT INTO tasks (title, description, status, priority, user_id, completed_at) VALUES (?, ?, ?, ?, ?, ?) RETURNING id, created_at, updated_at", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,783 INFO sqlalchemy.engine.Engine [cached since 7.198s ago] ('Demo Task', 'This is a demo task for the interview', 'pending', 'high', 1, None)
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[cached since 7.198s ago] ('Demo Task', 'This is a demo task for the interview', 'pending', 'high', 1, None)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,784 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,786 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,787 INFO sqlalchemy.engine.Engine SELECT tasks.id, tasks.title, tasks.description, tasks.status, tasks.priority, tasks.user_id, tasks.created_at, tasks.updated_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.id = ?
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT tasks.id, tasks.title, tasks.description, tasks.status, tasks.priority, tasks.user_id, tasks.created_at, tasks.updated_at, tasks.completed_at \nFROM tasks \nWHERE tasks.id = ?", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,787 INFO sqlalchemy.engine.Engine [cached since 7.198s ago] (2,)
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[cached since 7.198s ago] (2,)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,788 INFO sqlalchemy.engine.Engine INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "INSERT INTO audit_logs (user_id, action, resource_type, resource_id, details, ip_address, user_agent) VALUES (?, ?, ?, ?, ?, ?, ?) RETURNING id, created_at", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,788 INFO sqlalchemy.engine.Engine [cached since 34.74s ago] (1, 'task_created', 'task', '2', 'Title: Demo Task, Priority: high', None, None)
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[cached since 34.74s ago] (1, 'task_created', 'task', '2', 'Title: Demo Task, Priority: high', None, None)", "service": null, "version": null, "environment": null}
+2025-11-04 12:06:55,789 INFO sqlalchemy.engine.Engine COMMIT
+{"asctime": "2025-11-04 12:06:55", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "COMMIT", "service": null, "version": null, "environment": null}
+{"task_id": 2, "user_id": 1, "event": "Task created successfully", "request_id": "e89726ad-c4b0-4c9d-a170-af1fcf3b27ec", "level": "info"}
+{"method": "POST", "path": "/api/v1/tasks", "status_code": 201, "duration": "0.010s", "response_size": 0, "event": "Request completed", "request_id": "e89726ad-c4b0-4c9d-a170-af1fcf3b27ec", "level": "info"}
+INFO:     127.0.0.1:63287 - "POST /api/v1/tasks HTTP/1.1" 201 Created
+{"method": "GET", "path": "/api/v1/tasks", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 0, "event": "Request started", "request_id": "6a3f3725-fbca-4ee5-8828-63ddf1d6031c", "level": "info"}
+2025-11-04 12:07:02,060 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:07:02", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:07:02,061 INFO sqlalchemy.engine.Engine SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login 
+FROM users 
+WHERE users.id = ? AND users.is_active = 1
+{"asctime": "2025-11-04 12:07:02", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT users.id, users.email, users.username, users.hashed_password, users.full_name, users.is_active, users.is_superuser, users.created_at, users.updated_at, users.last_login \nFROM users \nWHERE users.id = ? AND users.is_active = 1", "service": null, "version": null, "environment": null}
+2025-11-04 12:07:02,061 INFO sqlalchemy.engine.Engine [cached since 13.48s ago] (1,)
+{"asctime": "2025-11-04 12:07:02", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[cached since 13.48s ago] (1,)", "service": null, "version": null, "environment": null}
+{"user_id": 1, "skip": 0, "limit": 100, "status_filter": null, "event": "Tasks list requested", "request_id": "6a3f3725-fbca-4ee5-8828-63ddf1d6031c", "level": "info"}
+2025-11-04 12:07:02,062 INFO sqlalchemy.engine.Engine SELECT tasks.id, tasks.title, tasks.description, tasks.status, tasks.priority, tasks.user_id, tasks.created_at, tasks.updated_at, tasks.completed_at 
+FROM tasks 
+WHERE tasks.user_id = ? ORDER BY tasks.created_at DESC
+ LIMIT ? OFFSET ?
+{"asctime": "2025-11-04 12:07:02", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT tasks.id, tasks.title, tasks.description, tasks.status, tasks.priority, tasks.user_id, tasks.created_at, tasks.updated_at, tasks.completed_at \nFROM tasks \nWHERE tasks.user_id = ? ORDER BY tasks.created_at DESC\n LIMIT ? OFFSET ?", "service": null, "version": null, "environment": null}
+2025-11-04 12:07:02,062 INFO sqlalchemy.engine.Engine [generated in 0.00013s] (1, 100, 0)
+{"asctime": "2025-11-04 12:07:02", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00013s] (1, 100, 0)", "service": null, "version": null, "environment": null}
+{"user_id": 1, "count": 2, "event": "Tasks retrieved successfully", "request_id": "6a3f3725-fbca-4ee5-8828-63ddf1d6031c", "level": "info"}
+{"method": "GET", "path": "/api/v1/tasks", "status_code": 200, "duration": "0.006s", "response_size": 0, "event": "Request completed", "request_id": "6a3f3725-fbca-4ee5-8828-63ddf1d6031c", "level": "info"}
+INFO:     127.0.0.1:63290 - "GET /api/v1/tasks HTTP/1.1" 200 OK
+2025-11-04 12:07:02,066 INFO sqlalchemy.engine.Engine ROLLBACK
+{"asctime": "2025-11-04 12:07:02", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "ROLLBACK", "service": null, "version": null, "environment": null}
+{"method": "GET", "path": "/docs", "client_ip": "127.0.0.1", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.105.1 Chrome/138.0.7204.251 Electron/37.6.0 Safari/537.36", "request_size": 0, "event": "Request started", "request_id": "d549c885-8030-4cdd-9753-9a5e4fd35208", "level": "info"}
+{"method": "GET", "path": "/docs", "status_code": 200, "duration": "0.001s", "response_size": 0, "event": "Request completed", "request_id": "d549c885-8030-4cdd-9753-9a5e4fd35208", "level": "info"}
+INFO:     127.0.0.1:63295 - "GET /docs?id=acf30d3e-0f4f-4363-9091-19ef845b5016&vscodeBrowserReqId=1762238227814 HTTP/1.1" 200 OK
+{"method": "GET", "path": "/openapi.json", "client_ip": "127.0.0.1", "user_agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Code/1.105.1 Chrome/138.0.7204.251 Electron/37.6.0 Safari/537.36", "request_size": 0, "event": "Request started", "request_id": "41b4e4d0-4649-4941-9df9-c8333c61fdb6", "level": "info"}
+{"method": "GET", "path": "/openapi.json", "status_code": 200, "duration": "0.027s", "response_size": 0, "event": "Request completed", "request_id": "41b4e4d0-4649-4941-9df9-c8333c61fdb6", "level": "info"}
+INFO:     127.0.0.1:63295 - "GET /openapi.json HTTP/1.1" 200 OK
+{"method": "GET", "path": "/", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 0, "event": "Request started", "request_id": "92e3f8e0-a57c-4bd9-a6df-41c17ba88b0a", "level": "info"}
+{"method": "GET", "path": "/", "status_code": 200, "duration": "0.001s", "response_size": 0, "event": "Request completed", "request_id": "92e3f8e0-a57c-4bd9-a6df-41c17ba88b0a", "level": "info"}
+INFO:     127.0.0.1:63306 - "GET / HTTP/1.1" 200 OK
+{"method": "GET", "path": "/api/v1/health", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 0, "event": "Request started", "request_id": "93ace4cc-d37a-45bb-b7af-a473c2c3cea7", "level": "info"}
+2025-11-04 12:08:09,658 INFO sqlalchemy.engine.Engine BEGIN (implicit)
+{"asctime": "2025-11-04 12:08:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "BEGIN (implicit)", "service": null, "version": null, "environment": null}
+2025-11-04 12:08:09,658 INFO sqlalchemy.engine.Engine SELECT CURRENT_TIMESTAMP AS now_1
+{"asctime": "2025-11-04 12:08:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "SELECT CURRENT_TIMESTAMP AS now_1", "service": null, "version": null, "environment": null}
+2025-11-04 12:08:09,659 INFO sqlalchemy.engine.Engine [generated in 0.00020s] ()
+{"asctime": "2025-11-04 12:08:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "[generated in 0.00020s] ()", "service": null, "version": null, "environment": null}
+{"event": "Health check successful", "request_id": "93ace4cc-d37a-45bb-b7af-a473c2c3cea7", "level": "info"}
+{"method": "GET", "path": "/api/v1/health", "status_code": 200, "duration": "0.003s", "response_size": 0, "event": "Request completed", "request_id": "93ace4cc-d37a-45bb-b7af-a473c2c3cea7", "level": "info"}
+INFO:     127.0.0.1:63308 - "GET /api/v1/health HTTP/1.1" 200 OK
+2025-11-04 12:08:09,660 INFO sqlalchemy.engine.Engine ROLLBACK
+{"asctime": "2025-11-04 12:08:09", "name": "sqlalchemy.engine.Engine", "levelname": "INFO", "message": "ROLLBACK", "service": null, "version": null, "environment": null}
+{"method": "GET", "path": "/metrics", "client_ip": "127.0.0.1", "user_agent": "curl/8.6.0", "request_size": 0, "event": "Request started", "request_id": "1f24fc6f-3c5c-44c0-81b6-935aa768097c", "level": "info"}
+{"method": "GET", "path": "/metrics", "status_code": 200, "duration": "0.004s", "response_size": 0, "event": "Request completed", "request_id": "1f24fc6f-3c5c-44c0-81b6-935aa768097c", "level": "info"}
+INFO:     127.0.0.1:63313 - "GET /metrics HTTP/1.1" 200 OK
